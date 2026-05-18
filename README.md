@@ -10,7 +10,9 @@ Built as the browser-side companion to [cookie-url-lab](../Cookie-Url), applying
 
 <!-- To add a demo video: on GitHub, edit this file and drag-and-drop your video into the editor -->
 
-> Demo video coming soon.
+https://github.com/user-attachments/assets/b9207712-ea0c-47c3-81ec-eb0132bcfc87
+
+
 
 ---
 
