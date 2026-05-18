@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cookie-URL Analyzer — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1>Cookie-URL Analyzer</h1>
+      <div id="stats">
+        <span id="stat-domains">0 domains</span>
+        <span id="stat-pages">0 pages</span>
+        <span id="stat-mappings">0 mappings</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <span id="status-dot" class="dot"></span>
+      <button id="btn-toggle" class="toggle-btn"></button>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="pages">Pages</button>
+      <button class="tab-btn" data-tab="mappings">Mappings</button>
+    </div>
+    <div class="toolbar-controls">
+      <select id="filter-domain"><option value="">All domains</option></select>
+      <button id="btn-refresh">Refresh</button>
+      <button id="btn-clear" class="danger">Clear Data</button>
+    </div>
+  </div>
+
+  <!-- ── Pages tab ────────────────────────────────────────────────── -->
+  <div id="tab-pages" class="tab-panel active">
+    <div id="pages-list"></div>
+    <div id="pages-empty" class="empty-state" style="display:none">
+      <p>No pages recorded yet.</p>
+      <p>Press <strong>Start Recording</strong> and browse some websites.</p>
+    </div>
+  </div>
+
+  <!-- ── Mappings tab ─────────────────────────────────────────────── -->
+  <div id="tab-mappings" class="tab-panel" style="display:none">
+    <div class="mappings-toolbar">
+      <label class="score-filter">
+        Min score
+        <input type="range" id="filter-score" min="50" max="100" value="85" step="5" />
+        <span id="score-label">0.85</span>
+      </label>
+    </div>
+    <table id="findings-table">
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>URL Parameter</th>
+          <th>Transform</th>
+          <th>Cookie Name</th>
+          <th>Avg Score</th>
+          <th>Observations</th>
+          <th>Last Seen</th>
+        </tr>
+      </thead>
+      <tbody id="findings-body"></tbody>
+    </table>
+    <div id="mappings-empty" class="empty-state" style="display:none">
+      <p>No value correlations found yet.</p>
+    </div>
+  </div>
+
+  <!-- ── Detail modal ─────────────────────────────────────────────── -->
+  <div id="detail-modal" class="hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button id="modal-close">×</button>
+      <h2 id="modal-title"></h2>
+      <p id="modal-subtitle"></p>
+      <div id="modal-examples"></div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

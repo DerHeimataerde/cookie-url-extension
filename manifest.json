@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie-URL Analyzer",
+  "version": "1.0.0",
+  "description": "Correlates URL parameters to cookie values across all visited pages to detect tracking patterns.",
+  "permissions": ["tabs", "cookies", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cookie-URL Analyzer"
+  }
+}

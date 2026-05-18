@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cookie-URL Analyzer</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="header">
+    <span class="title">Cookie-URL Analyzer</span>
+    <span id="status-dot" class="dot"></span>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <span id="stat-events">0</span>
+      <label>events</label>
+    </div>
+    <div class="stat">
+      <span id="stat-domains">0</span>
+      <label>domains</label>
+    </div>
+    <div class="stat">
+      <span id="stat-mappings">0</span>
+      <label>mappings</label>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button id="btn-toggle" class="toggle-btn"></button>
+    <button id="btn-dashboard">Open Dashboard →</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
